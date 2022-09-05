@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+  }
+
+  .container{
+    max-width: 80%;
+    margin: 0 10%;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .right-nav{
+    position:absolute;
+    top: 0px;
+    right:0px;
+  }
+
+  .modal{
+    display: none;
+    position: fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .login-sign-up-form h2{
+    font-weight: bold;
+  }
+  .login-sign-up-form{
+    display:flex;
+    justify-content: center;
+    width: 50%;
+    max-height: 100%;
+    background-color: whitesmoke;
+    overflow: auto;
+  }
+  .login-sign-up-form form{
+    padding:20px 50px 20px 20px;
+    max-width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .login-sign-up-form form img{
+    max-width: 50%;
+    border-radius: 50%;
+  }
+  .info-input{
+    display:flex;
+    flex-direction: column;
+    width:100%
+  }
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  /* Set a style for all form 's buttons */
+  form button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  #sign-up-modal .login-sign-up-form{
+    justify-content: flex-start;
+  }
+  #sign-up-modal .login-sign-up-form form{
+    align-items: flex-start;
+  }
+
+  /* table style */
+  table button{
+    text-decoration: none;
+    cursor: pointer;
+  }
+  table button a{
+    text-decoration: none;
+  }

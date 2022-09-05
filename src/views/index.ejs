@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeJS Project</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/index.js"></script>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="dashboard">Dashboard</a>
+        <a href="upload-file">Upload file</a>
+        <div class="right-nav">
+          <% if(loggedIn){%>
+            <a href="/log-out"> Log out</a>
+          <% } else{ %>
+            <a id="sign-up-button"> Sign up</a>
+            <a id="login-button"> Login</a>
+          <% } %>
+        </div>
+    </div>
+    <h1>List User</h1>
+
+    <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable" style="color:#000">
+        <tbody><tr class="w3-green">
+          <th>ID</th>
+          <th>Name</th>
+          <th>Job</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+        </tbody>
+        <tbody>
+            <% for(let i=0; i < userData.length; i++) { %>
+                <tr>
+                  <td>
+                    <%= userData[i].id%>
+                  </td>
+                  <td>
+                    <%= userData[i].name%>
+                  </td>
+                  <td>
+                    <%= userData[i].job%>
+                  </td>
+                  <td>
+                    <%= userData[i].address%>
+                  </td>
+                  <td>
+                    <button type="button"><a class="no-decoration" href= <%= "/detail/user/" + userData[i].id %>>Detail</a></button>
+                    <button type="button"><a class="no-decoration" href= <%= "/edit/" + userData[i].id %>>Edit</a></button>
+                    <button type="button"><a class="no-decoration" href= <%= "/delete/" + userData[i].id %>>Delete</a></button>
+                  </td>
+                </tr>
+             <% } %>
+        </tbody>
+    </table>
+
+
+    <!-- Login Form -->
+    <div id="login-modal" class="modal">
+      <div class="login-sign-up-form">
+        <form action="/login" method="post">
+        <h2> NodeJS Project </h2>
+        <img id="login-img" src="/img/nodeJS.png" alt="">
+  
+        <div class="info-input">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="username" required>
+  
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+          <button type="submit">Login</button>
+        </div>          
+        </form>
+      </div>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div id="sign-up-modal" class="modal">
+      <div class="login-sign-up-form">
+        <form action="/sign-up" method="post">
+        <h2>Sign Up </h2>
+        <p>Welcome newcomer! Please fill in this form to create an account.</p>
+  
+        <div class="info-input">
+          <label for="uname"><b>Your Name</b></label>
+          <input type="text" placeholder="Enter Your Name" name="realname" required>
+
+          <label for="uname"><b>Job</b></label>
+          <input type="text" placeholder="Enter Your Job" name="job" required>
+
+          <label for="uname"><b>Address</b></label>
+          <input type="text" placeholder="Enter Your Address" name="address" required>
+
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="username" required>
+  
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+
+          <button type="submit">Sign Up</button>
+        </div>          
+        </form>
+      </div>
+    </div>
+</body>
+</html>
