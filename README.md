@@ -70,15 +70,19 @@ _Below is an example of how you can instruct your audience on installing and set
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/Weslife2002/Nodejs-Learning-Project.git
    ```
-3. Install NPM packages
+2. Init NPM
+  ```sh
+   npm init
+   ```
+3. Install NPM packages to download all dependencies.
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+4. Run the project
+   ```sh
+   npm start
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
